@@ -3,14 +3,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path');
-var uri = "mongodb+srv://nausheen:vh7BhWIXpxoT47XLZvfR@cluster0.fqnbn.mongodb.net/mern_youtube?retryWrites=true&w=majority"
+var MONGODB_URI = "mongodb+srv://nausheen:vh7BhWIXpxoT47XLZvfR@cluster0.fqnbn.mongodb.net/mern_youtube?retryWrites=true&w=majority"
 const app = express();
 const PORT = process.env.PORT || 8080; // Step 1
 
 const routes = require('./routes/api');
 
 // Step 2
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern_youtube', {
+mongoose.connect(MONGODB_URI || 'mongodb://localhost/mern_youtube', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
